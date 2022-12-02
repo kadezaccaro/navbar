@@ -1,0 +1,154 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  border: 16px solid black;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: whitesmoke;
+  font-size: 24px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: blue;
+}
+
+.xl-logo-container {
+  display: grid;
+  place-content: center;
+  height: calc((100vh - 108px) - 32px);
+}
+
+.xl-logo {
+  font-size: 28vw;
+  line-height: 28vw;
+  letter-spacing: -2.5vw;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+/* Make sizes of <li> and <a> match icon size. */
+.social-icons li,
+a {
+  display: inline-block;
+  height: 24px;
+}
+
+i {
+  font-size: 24px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+@media only screen and (min-width: 1200px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  nav {
+    padding: 16px;
+    display: block;
+  }
+
+  ul {
+    display: block;
+  }
+
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin-top: 24px;
+    border-bottom: 2px dotted black;
+  }
+
+  .nav-links a {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav-links a:hover {
+    color: whitesmoke;
+    background-color: blue;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  /* Hide links by default */
+  .hide {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  /* Add class with JS - toggleClass() */
+  .show-links {
+    height: 216px; /* Height of .nav-links */
+    opacity: 1;
+  }
+
+  /* Add class with JS - toggleClass() */
+  .show-icons {
+    height: 24px;
+    opacity: 1;
+    margin-top: 24px;
+  }
+
+  .xl-logo-container {
+    height: calc((100vh - 56px) - 32px);
+  }
+}
+
+@media only screen and (max-height: 440px) {
+  .xl-logo {
+    display: none;
+  }
+
+  body {
+    overflow-y: scroll;
+  }
+}
